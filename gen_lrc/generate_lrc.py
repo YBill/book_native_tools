@@ -1,4 +1,5 @@
 import os
+import json
 from aeneas.executetask import ExecuteTask
 from aeneas.task import Task
 
@@ -60,6 +61,13 @@ for file_name in os.listdir(res_folder):
             ExecuteTask(task).execute()
             # 输出同步后的 JSON 文件
             task.output_sync_map_file()
+            
+            # 重新格式化 JSON 文件，将 Unicode 转义序列转换为实际字符
+            with open(output_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            with open(output_file, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=1)
+            
             print(f"Generated: {output_file}")
         except Exception as e:
             print(f"Error processing {file_name}: {str(e)}")
