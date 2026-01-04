@@ -6,7 +6,8 @@ from aeneas.task import Task
 print("请选择处理的语言：")
 print("1. 英语 (English)")
 print("2. 印尼语 (Indonesian)")
-choice = input("请输入选项 (1 或 2): ").strip()
+print("3. 汉语 (Chinese)")
+choice = input("请输入选项 (1、2 或 3): ").strip()
 
 # 根据选择设置语言代码
 if choice == "1":
@@ -15,6 +16,9 @@ if choice == "1":
 elif choice == "2":
     language_code = "ind"
     language_name = "印尼语"
+elif choice == "3":
+    language_code = "cmn"
+    language_name = "汉语"
 else:
     print("无效的选择，默认使用英语")
     language_code = "eng"
