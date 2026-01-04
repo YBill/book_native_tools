@@ -4,12 +4,22 @@ import 'package:BookSummary/utils/LogUtil.dart';
 
 class LyricController {
 
+  /// 自动检测语言并选择断句方式
+  /// 如果是中文使用 splitTextZh，否则使用 splitTextEn
+  List<List<String>> splitText(String text) {
+    if (isChineseText(text)) {
+      return splitTextZh(text);
+    } else {
+      return splitTextEn(text);
+    }
+  }
+
   /// 通过下面算法来分割歌词（英文）
   /// 先通过\n\n来分割段落,然后通过(?<=[.,!?])\s+来分割句子
   /// 注意服务端返回的lrc必须跟这里算法保持一致，否则显示会有问题
   /// 原因是为了精确找到某一个词的位置，通过词找可能会有多个，然后现在是服务端切割和这里切割一致，然后通过position来找位置
   /// return: List<List<String>> 内层List表示一个段落中多个句子，外层List表示一个段落
-  List<List<String>> splitText(String text) {
+  List<List<String>> splitTextEn(String text) {
     if (text.isEmpty) return [];
     try {
       List<String> paragraphs = text.split('\n\n');
@@ -25,7 +35,9 @@ class LyricController {
 
         List<String> sentenceList = [];
         for (int i = 0; i < sentences.length; i++) {
-          if (sentences[i].trim().isEmpty) {
+          if (sentences[i]
+              .trim()
+              .isEmpty) {
             continue;
           }
           sentenceList.add(sentences[i].trim() + " ");
@@ -70,7 +82,9 @@ class LyricController {
 
         List<String> sentenceList = [];
         for (String sentence in sentences) {
-          if (sentence.trim().isNotEmpty) {
+          if (sentence
+              .trim()
+              .isNotEmpty) {
             sentenceList.add(sentence.trim());
           }
         }
@@ -87,5 +101,11 @@ class LyricController {
     }
 
     return [];
+  }
+
+  /// 检测文本是否为中文
+  /// 通过检查是否包含中文标点符号来判断，速度快
+  bool isChineseText(String text) {
+    return RegExp(r'[。？！，、；：]').hasMatch(text);
   }
 }
