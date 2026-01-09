@@ -7,13 +7,13 @@ def split_text(text):
     paragraphs = text.split('\n\n')
     
     result = []
-    # 中文断句标点：句号、问号、感叹号、分号、冒号、逗号、顿号、省略号、破折号
-    # 在标点后断句（省略号和破折号可能连续出现，需要完整匹配）
-    reg_exp = re.compile(r'(…+|—+|[。？！；：，、])')
+    # 中文断句标点：句号、问号、感叹号、分号（一句话说完的地方）
+    # 在标点后断句
+    reg_exp = re.compile(r'[。？！；]')
     
     for paragraph in paragraphs:
-        # 在标点后插入换行符作为分隔
-        marked_text = reg_exp.sub(r'\1\n', paragraph)
+        # 在标点后插入换行符作为分隔（标点保留）
+        marked_text = reg_exp.sub(lambda m: m.group(0) + '\n', paragraph)
         # 按换行符分割
         sentences = marked_text.split('\n')
         

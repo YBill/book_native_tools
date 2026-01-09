@@ -60,7 +60,7 @@ class LyricController {
 
   /// 通过下面算法来分割歌词（中文）
   /// 先通过\n\n来分割段落,然后通过中文标点符号来分割句子
-  /// 中文断句标点：句号、问号、感叹号、分号、冒号、逗号、顿号、省略号、破折号
+  /// 中文断句标点：句号、问号、感叹号、分号（一句话说完的地方）
   /// 注意服务端返回的lrc必须跟这里算法保持一致，否则显示会有问题
   /// return: List<List<String>> 内层List表示一个段落中多个句子，外层List表示一个段落
   List<List<String>> splitTextZh(String text) {
@@ -70,12 +70,12 @@ class LyricController {
 
       List<List<String>> result = [];
 
-      // 中文断句标点：句号、问号、感叹号、分号、冒号、逗号、顿号、省略号、破折号
-      // 在标点后断句（省略号和破折号可能连续出现，需要完整匹配）
-      RegExp regExp = RegExp(r'(…+|—+|[。？！；：，、])');
+      // 中文断句标点：句号、问号、感叹号、分号（一句话说完的地方）
+      // 在标点后断句
+      RegExp regExp = RegExp(r'[。？！；]');
 
       for (String paragraph in paragraphs) {
-        // 在标点后插入换行符作为分隔
+        // 在标点后插入换行符作为分隔（标点保留）
         String markedText = paragraph.replaceAllMapped(regExp, (match) => '${match.group(0)}\n');
         // 按换行符分割
         List<String> sentences = markedText.split('\n');
