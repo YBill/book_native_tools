@@ -5,25 +5,37 @@ from aeneas.task import Task
 
 # 语言选择
 print("请选择处理的语言：")
-print("1. 英语 (English)")
-print("2. 印尼语 (Indonesian)")
-print("3. 汉语 (Chinese)")
-choice = input("请输入选项 (1、2 或 3): ").strip()
+print(" 1. 英语 (English)")
+print(" 2. 印尼语 (Indonesian)")
+print(" 3. 汉语 (Chinese)")
+print(" 4. 西班牙语 (Spanish)")
+print(" 5. 日语 (Japanese)")
+print(" 6. 法语 (French)")
+print(" 7. 韩语 (Korean)")
+print(" 8. 葡萄牙语 (Portuguese)")
+print(" 9. 越南语 (Vietnamese)")
+print("10. 德语 (German)")
+choice = input("请输入选项 (1-10): ").strip()
 
 # 根据选择设置语言代码
-if choice == "1":
-    language_code = "eng"
-    language_name = "英语"
-elif choice == "2":
-    language_code = "ind"
-    language_name = "印尼语"
-elif choice == "3":
-    language_code = "cmn"
-    language_name = "汉语"
+languages = {
+    "1":  ("eng", "英语"),
+    "2":  ("ind", "印尼语"),
+    "3":  ("cmn", "汉语"),
+    "4":  ("spa", "西班牙语"),
+    "5":  ("jpn", "日语"),
+    "6":  ("fra", "法语"),
+    "7":  ("kor", "韩语"),
+    "8":  ("por", "葡萄牙语"),
+    "9":  ("vie", "越南语"),
+    "10": ("deu", "德语"),
+}
+
+if choice in languages:
+    language_code, language_name = languages[choice]
 else:
     print("无效的选择，默认使用英语")
-    language_code = "eng"
-    language_name = "英语"
+    language_code, language_name = "eng", "英语"
 
 print(f"\n已选择语言: {language_name} ({language_code})\n")
 
@@ -61,13 +73,13 @@ for file_name in os.listdir(res_folder):
             ExecuteTask(task).execute()
             # 输出同步后的 JSON 文件
             task.output_sync_map_file()
-            
+
             # 重新格式化 JSON 文件，将 Unicode 转义序列转换为实际字符
             with open(output_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, ensure_ascii=False, indent=1)
-            
+
             print(f"Generated: {output_file}")
         except Exception as e:
             print(f"Error processing {file_name}: {str(e)}")
