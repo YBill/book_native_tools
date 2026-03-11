@@ -1,0 +1,98 @@
+{
+"bs_book_points_vi": [
+	{
+		"book_id" : 483,
+		"point_id" : 0,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dscjBeXGVGW1pXRUwL.mp3"
+	},
+	{
+		"book_id" : 483,
+		"point_id" : 1,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dsczBeXGVGW1pXRU8K.mp3"
+	},
+	{
+		"book_id" : 483,
+		"point_id" : 2,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dscDBeXGVGW1pXRU4K.mp3"
+	},
+	{
+		"book_id" : 483,
+		"point_id" : 3,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dscTBeXGVGW1pXRUAD.mp3"
+	},
+	{
+		"book_id" : 483,
+		"point_id" : 4,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dsdjBeXGVGW1pXSkkB.mp3"
+	},
+	{
+		"book_id" : 483,
+		"point_id" : 5,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dsdzBeXGVGW1pXSkgH.mp3"
+	},
+	{
+		"book_id" : 483,
+		"point_id" : 6,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dsdDBeXGVGW1pXSksF.mp3"
+	},
+	{
+		"book_id" : 483,
+		"point_id" : 7,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dsdTBeXGVGW1pXSk0B.mp3"
+	},
+	{
+		"book_id" : 483,
+		"point_id" : 8,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dsejBeXGVGW1pXSkwG.mp3"
+	},
+	{
+		"book_id" : 483,
+		"point_id" : 9,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/dldcNAUcCBkPExRXQ1dsezBeXGVGW1pXSk8E.mp3"
+	},
+	{
+		"book_id" : 885,
+		"point_id" : 0,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/eldaNAUcCBkPExRXQ1dscjBeXGVBVVlWRU4L.mp3"
+	},
+	{
+		"book_id" : 885,
+		"point_id" : 1,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/eldaNAUcCBkPExRXQ1dsczBeXGVBVVlWRUEL.mp3"
+	},
+	{
+		"book_id" : 885,
+		"point_id" : 2,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/eldaNAUcCBkPExRXQ1dscDBeXGVBVVlWSkkH.mp3"
+	},
+	{
+		"book_id" : 885,
+		"point_id" : 3,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/eldaNAUcCBkPExRXQ1dscTBeXGVBVVlWSksB.mp3"
+	},
+	{
+		"book_id" : 885,
+		"point_id" : 4,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/eldaNAUcCBkPExRXQ1dsdjBeXGVBVVlWSk0C.mp3"
+	},
+	{
+		"book_id" : 885,
+		"point_id" : 5,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/eldaNAUcCBkPExRXQ1dsdzBeXGVBVVlWSk8C.mp3"
+	},
+	{
+		"book_id" : 885,
+		"point_id" : 6,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/eldaNAUcCBkPExRXQ1dsdDBeXGVBVVlWSkEC.mp3"
+	},
+	{
+		"book_id" : 885,
+		"point_id" : 7,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/eldaNAUcCBkPExRXQ1dsdTBeXGVBVVlWSkAE.mp3"
+	},
+	{
+		"book_id" : 885,
+		"point_id" : 8,
+		"audio_url" : "https:\/\/cdn.bookwisebetterme.com\/audio\/eldaNAUcCBkPExRXQ1dsejBeXGVBVVlWS0gB.mp3"
+	}
+]}
